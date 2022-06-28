@@ -1,3 +1,8 @@
+
+require("dotenv").config({
+  path: `.env`,
+})
+
 module.exports = {
   siteMetadata: {
     title: `Gatsby Default Starter`,
@@ -6,6 +11,13 @@ module.exports = {
     siteUrl: `https://gatsbystarterdefaultsource.gatsbyjs.io/`,
   },
   plugins: [
+    {
+      resolve: 'gatsby-source-prismic',
+      options: {
+        repositoryName: "test-geoffrey",
+        customTypesApiToken: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0eXBlIjoibWFjaGluZTJtYWNoaW5lIiwiZGJpZCI6InRlc3QtZ2VvZmZyZXktY2I3YjIyNWMtODJjMi00ODdmLWIyNmUtNTY1NGQ4ZDM3ZDlhXzQiLCJkYXRlIjoxNjU2MzcxNjE4LCJkb21haW4iOiJ0ZXN0LWdlb2ZmcmV5IiwiaWF0IjoxNjU2MzcxNjE4fQ.QJ1WSIPKRVxt2ph9tULgFGihqtuLLyAxyfO1NMQvMlE",
+      },
+    },
     `gatsby-plugin-react-helmet`,
     `gatsby-plugin-image`,
     {
